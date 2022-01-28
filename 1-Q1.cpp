@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : 1-Q1.cpp
-// Author      : Aref Abedjooy
+// Author      : Aref Abedjooy2
 // Version     : 1.0
 // Copyright   : Copyright (c) 2022, Aref Abedjooy. No Rights Reserved.
 // Description : This exercise tests your knowledge of strings in C++.
