@@ -27,6 +27,8 @@ void print_list(Node *n)
 }
 
 
+
+
 void push(Node **n, int new_data){
     Node *new_node = new Node();
     new_node->data = new_data;
@@ -34,12 +36,33 @@ void push(Node **n, int new_data){
     (*n) = new_node;
 }
 
-// void push(struct Node ** head_ref, int new_data) {
-//     struct Node * new_node = (struct Node * ) malloc(sizeof(struct Node));
-//     new_node->data = new_data;
-//     new_node->next = ( * head_ref);
-//     ( * head_ref) = new_node;
-// }
+
+void append(Node **n, int new_data){
+    Node *new_node = new Node();
+    Node *last = *n;
+    new_node->data = new_data;
+    new_node->next = nullptr;
+
+    while(last->next != nullptr){
+        last = last->next;
+    }
+    last->next = new_node;
+}
+
+
+void insertAfter(Node* prev_node, int new_data){
+    if (prev_node == nullptr) {
+        cout << "the given previous node cannot be NULL";
+        return;
+    }
+
+     Node *new_node = new Node();
+     new_node->data = new_data;
+     new_node->next = prev_node->next;
+     prev_node->next = new_node;
+}
+
+
 
 int main()
 {
@@ -62,6 +85,12 @@ int main()
 
     print_list(head);
     push(&head, 11);
+    cout << endl;
+    print_list(head);
+    append(&head, 22);
+    cout << endl;
+    print_list(head);
+    insertAfter(second, 33);
     cout << endl;
     print_list(head);
 
