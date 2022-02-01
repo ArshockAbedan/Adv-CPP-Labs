@@ -17,28 +17,6 @@ struct ListNode
 class Solution
 {
 public:
-    unsigned long long int vector_to_int(vector<int> num)
-    {
-        unsigned long long int n = 0;
-        int N = num.size();
-        for (int i = 0; i < N; i++)
-        {
-            n += num[i] * pow(10, N - i - 1);
-        }
-        return n;
-    }
-
-    vector<int> int_to_vector(unsigned long long int n)
-    {
-        vector<int> vec;
-        while (n != 0)
-        {
-            vec.push_back(n % 10);
-            n /= 10;
-        }
-        // std::reverse(vec.begin(), vec.end());
-        return vec;
-    }
     ListNode *convert_int_to_listnode(unsigned long long int num)
     {
         int remainder;
@@ -59,8 +37,10 @@ public:
         return mainHead;
     }
 
-    void print_list(ListNode *n){
-        while(n !=nullptr){
+    void print_list(ListNode *n)
+    {
+        while (n != nullptr)
+        {
             cout << n->val << "";
             n = n->next;
         }
@@ -68,36 +48,49 @@ public:
 
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
     {
-        // two vectors to store the numbers
-        vector<int> num1_revers, num2_revers;
-        //   define actual numbers
-        long long num1, num2, sum_numbers, remainder;
-        while (l1 != nullptr)
+        ListNode *dummyHead = new ListNode();
+        ListNode *temp = dummyHead;
+        int carry = 0;
+        int sum = 0;
+        int x, y;
+        while (l1 != nullptr or l2 != nullptr)
         {
-            num1_revers.push_back(l1->val);
-            l1 = l1->next;
+            if (l1 != nullptr)
+            {
+                x = l1->val;
+                l1 = l1->next;
+            }
+            else
+            {
+                x = 0;
+            }
+            if (l2 != nullptr)
+            {
+                y = l2->val;
+                l2 = l2->next;
+            }
+            else
+            {
+                y = 0;
+            }
+            sum = carry + x + y;
+            carry = sum / 10;
+            temp->next = new ListNode(sum % 10);
+            temp = temp->next;
         }
-        while (l2 != nullptr)
+        if (carry > 0)
         {
-            num2_revers.push_back(l2->val);
-            l2 = l2->next;
+            temp->next = new ListNode(carry);
         }
-        std::reverse(num1_revers.begin(), num1_revers.end());
-        std::reverse(num2_revers.begin(), num2_revers.end());
-        num1 = vector_to_int(num1_revers);
-        num2 = vector_to_int(num2_revers);
-        sum_numbers = num1 + num2;
-        ListNode *mainHead = convert_int_to_listnode(sum_numbers);
-        return mainHead;
+        return dummyHead->next;
     }
 };
 
 int main()
 {
     Solution *solution = new Solution();
-    ListNode *firstList = solution->convert_int_to_listnode(1000000000000000000000000000001);
-    ListNode *secondList = solution->convert_int_to_listnode(19999999999);
+    ListNode *firstList = solution->convert_int_to_listnode(9999999);
+    ListNode *secondList = solution->convert_int_to_listnode(9999);
     ListNode *resultList = solution->addTwoNumbers(firstList, secondList);
     solution->print_list(resultList);
-
 }
