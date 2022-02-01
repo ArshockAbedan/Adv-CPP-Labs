@@ -1,6 +1,11 @@
 {
     "cmake.configureOnOpen": true,
     "files.associations": {
-        "iostream": "cpp"
-    }
+        "iostream": "cpp",
+        "vector": "cpp",
+        "cmath": "cpp",
+        "xutility": "cpp",
+        "xstring": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
