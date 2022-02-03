@@ -13,7 +13,7 @@ public:
         while( left < right){
             distance = right - left;
             temp_area = std::min(height[left], height[right]) * distance; 
-            if (temp_area > max_area  ){
+            if (temp_area > max_area){
                 max_area = temp_area;
             }
             if(height[left] < height[right]){
