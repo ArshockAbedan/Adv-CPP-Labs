@@ -87,7 +87,7 @@ int main()
             f *= i;
         }
     }
-    // pick a random n between 1 to n!
+    // pick a random k between 1 to n!
     k = rand() % f + 1;
 
     cout << "k = " << k << endl;
