@@ -71,11 +71,11 @@ int main()
 
     // initialize random seed
     srand(time(NULL));
-    // pick a random n between 0 to 9
+    // pick a random n between 1 to 9
     int n = rand() % 9 + 1;
     cout << "n = " << n << endl;
-    int k = 1;
-    int f = 1;
+    int k = -1;
+    int f = 1; // a variable to compute n!
     if (n == 1)
     {
         k = 1;
@@ -87,7 +87,7 @@ int main()
             f *= i;
         }
     }
-
+    // pick a random n between 1 to n!
     k = rand() % f + 1;
 
     cout << "k = " << k << endl;
