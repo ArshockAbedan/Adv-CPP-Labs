@@ -41,14 +41,14 @@ public:
             {
                 if (arr_2d[i][j] == 1)
                 {
-                    if (j == 0)
+                    if (j == 0) // First item
                     {
                         if (!((arr_2d[i][j + 1] == 1) || (arr_2d[i][n_cols - 1] == 1)))
                         {
                             return false;
                         }
                     }
-                    else if (j == n_cols - 1)
+                    else if (j == n_cols - 1) // last item
                     {
                         if (!((arr_2d[i][n_cols - 2] == 1) || (arr_2d[i][0] == 1)))
                         {
