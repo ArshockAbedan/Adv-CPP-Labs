@@ -38,7 +38,7 @@ public:
         while(!myStack.empty()){
             result += myStack.top();
             if(myStack.size() != 1){
-                result += " "; // there is no need extra space at the end
+                result += " "; // there is no need for extra space at the end.
             }
             myStack.pop();
         }
