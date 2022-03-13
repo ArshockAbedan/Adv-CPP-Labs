@@ -50,7 +50,8 @@
         "xtr1common": "cpp",
         "xtree": "cpp",
         "bitset": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "deque": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
