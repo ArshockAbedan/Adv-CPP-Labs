@@ -17,16 +17,18 @@ class Solution
 public:
     int findMaxSumSubarray(vector<int> nums, int k)
     {
-        int maxSum = INT_MIN; // max Sum over all possible subarrays
+        int maxSum = INT_MIN;      // max Sum over all possible subarrays
         int currentRunningSum = 0; // sum of all elements in current subarrays.
-        for(int i = 0; i < nums.size(); i++){
-            currentRunningSum +=nums[i];
+        for (int i = 0; i < nums.size(); i++)
+        {
+            currentRunningSum += nums[i];
             // before reaching to size of k, just sum up all elements in current subarray
-            if(i > k-1){
+            if (i > k - 1)
+            {
                 maxSum = max(maxSum, currentRunningSum);
-                // sliding window is shifted to right, 
-                // so first element in prevoius subarray is not in current subarray anymore. 
-                currentRunningSum = nums[i-(k-1)];
+                // sliding window is shifted to right,
+                // so first element in prevoius subarray is not in current subarray anymore.
+                currentRunningSum = nums[i - (k - 1)];
             }
         }
         return maxSum;
