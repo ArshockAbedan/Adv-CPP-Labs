@@ -51,7 +51,15 @@
         "xtree": "cpp",
         "bitset": "cpp",
         "queue": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "array": "cpp",
+        "complex": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "sstream": "cpp",
+        "stack": "cpp",
+        "unordered_map": "cpp",
+        "xhash": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
