@@ -17,6 +17,7 @@ class Solution
 public:
     int maxSubArray(vector<int> &nums)
     {
+        // Using Kadane's Algorithm to Maximum Sum Subarray Problem
         int maxGlobal = nums[0];
         int maxCurrent = nums[0];
         for (int i = 1; i < nums.size(); i++)
