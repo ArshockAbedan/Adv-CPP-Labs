@@ -18,11 +18,11 @@ class Solution
 public:
     int maxFrequency(vector<int> &nums, int k)
     {
-        // with help of sliding window
-        int l = 0; // left index
-        int r = 0; // right index
-        int total = 0; // total sum of elements inside the window
-        int res = 0; // output
+        // with help of dynamic sliding window
+        long long l = 0; // left index
+        long long r = 0; // right index
+        long long total = 0; // total sum of elements inside the window
+        long long res = 0; // output
 
         
         // sort the array
