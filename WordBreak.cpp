@@ -18,7 +18,7 @@ public:
     bool wordBreak(string s, vector<string> &wordDict)
     {
         int len = s.length();  // length of string
-        // Dynamic Programing: a vector of boolean which each elment contains true tell us
+        // Dynamic Programing: a vector of boolean which each element contains true tell us
         // that to the position of that element, we can segment string using provided dictionry.
         vector<bool> dp(len + 1, false); 
         dp[0] = true; // it should return true for an empty string.
