@@ -67,7 +67,7 @@ int main()
     wordDict.push_back("pen");
     Solution *solution = new Solution();
     bool result = solution->wordBreak(s, wordDict);
-    if (result)
+    if (result) 
     {
         cout << "True";
     }
