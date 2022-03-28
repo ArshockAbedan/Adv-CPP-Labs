@@ -9,6 +9,7 @@
 //               a different day in the future to sell that stock.
 //============================================================================
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -16,7 +17,7 @@ public:
     int maxProfit(vector<int>& prices) {
         int minTillNow= INT_MAX; // Min that we observe till now
         int maxProfit=0; // max possible profit from start till now.
-        for(int i=0; i<prices.size(); i++){
+        for(int i=0; i< prices.size(); i++){
             minTillNow= min(minTillNow, prices[i]);
             maxProfit = max(maxProfit, prices[i] - minTillNow);  // profit means current value - globalMin
         }
