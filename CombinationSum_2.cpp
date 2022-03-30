@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : CombinationSum.cpp
+// Name        : CombinationSum_2.cpp
 // Author      : Aref Abedjooy
 // Version     : 1.0
 // Copyright   : Copyright (c) 2022, Aref Abedjooy. No Rights Reserved.
