@@ -44,7 +44,6 @@ public:
 
 int main()
 {
-    vector<int> candidates = {10, 1, 2, 7, 6, 1, 5};
     int k = 3;
     int n = 9;
     Solution *solution = new Solution();
