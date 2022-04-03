@@ -3,9 +3,7 @@
 // Author      : Aref Abedjooy
 // Version     : 1.0
 // Copyright   : Copyright (c) 2022, Aref Abedjooy. No Rights Reserved.
-// Description : Given a string s and a dictionary of strings wordDict,
-//               return true if s can be segmented into
-//               a space-separated sequence of one or more dictionary words.
+// Description : https://leetcode.com/problems/word-break/
 //============================================================================
 #include <iostream>
 #include <vector>
