@@ -11,19 +11,11 @@
 #include <algorithm>
 using namespace std;
 
-string max_numbers(string arr[], int size)
+// To overload the > operator to compare string lengths
+int operator>(string str, string greater)
 {
-    string max = arr[0];
-    int max_length = arr[0].length();
-    for (int i = 1; i < size; i++)
-    {
-        if (arr[i].length() > max_length)
-        {
-            max = arr[i];
-            max_length = arr[i].length();
-        }
-    }
-    return max;
+
+    return (str.length() > greater.length());
 }
 
 // define the generic max_numbers function.
