@@ -16,27 +16,32 @@ class Solution
 public:
     vector<vector<string>> groupAnagrams(vector<string> &strs)
     {
-        vector<vector<string>> res;
-        int n = strs.size();
-        if (n < 1)
+        vector<vector<string>> res; // output
+        // Helper map ( Key: unique sorted version of each angram, Value: list of all Anagrams)
+        unordered_map<string, vector<string>> map; 
+        string originalStr;
+        vector<string> tempVector;
+        if (strs.size() < 1)
         {
             return res;
         }
 
-        unordered_map<string, vector<string>> map;
         for (string str : strs)
         {
-            string originalStr = str;
-            sort(str.begin(), str.end());
+            originalStr = str; // after sort, the original string should be kept unchanged.
+            // if we sort each of all anagrams, the result would be the same
+            sort(str.begin(), str.end()); 
+            // and we can use this sorted str as a key for map
             if (map.count(str) > 0)
             {
                 map[str].push_back(originalStr);
             }
             else
             {
-                vector<string> temp;
-                temp.push_back(originalStr);
-                map.insert({str, temp});
+                // if this sorted key is not there, lets create a new one.
+                tempVector.clear();
+                tempVector.push_back(originalStr);
+                map.insert({str, tempVector});
             }
         }
 
