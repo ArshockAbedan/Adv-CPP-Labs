@@ -32,6 +32,7 @@ int main()
         }
         cout << "There are total of " << allFirstLables.size() << " domains.\n";
         cout << uniqueFirstLables.size() << " of them are unique domains.";
+        file.close();
     }
     else
     {
