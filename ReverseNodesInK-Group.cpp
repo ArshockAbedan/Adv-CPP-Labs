@@ -105,7 +105,7 @@ public:
     }
 };
 
-void printRevesedList(ListNode *head)
+void printList(ListNode *head)
 {
     ListNode *ptr = head;
     if (ptr == nullptr)
@@ -135,11 +135,11 @@ int main()
     node3->next = node4;
     node4->next = node5;
     cout << "Original List: ";
-    printRevesedList(node1);
+    printList(node1);
     cout << "\n";
     int k = 3;
     Solution *solution = new Solution();
     ListNode *newHead = solution->reverseKGroup(node1, k);
     cout << "Reversed List with k = " << k << " : ";
-    printRevesedList(newHead);
+    printList(newHead);
 }
